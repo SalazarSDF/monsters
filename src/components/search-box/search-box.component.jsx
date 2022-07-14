@@ -1,4 +1,5 @@
 //import { Component } from "react"; //class method import
+import React from "react";
 import "./search-box.styles.css";
 const SearchBox = ({ className, placeholder, onChangeHandler }) => (
   <input

@@ -1,5 +1,5 @@
 //import { Component } from "react"; class method import
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import CardList from "./components/card-list/card-list.component.jsx";
 import SearchBox from "./components/search-box/search-box.component.jsx";
@@ -9,7 +9,6 @@ const App = () => {
   const [searchField, setSearchField] = useState(""); // [value, setValue]
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilterdMonsters] = useState(monsters);
-
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
