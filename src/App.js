@@ -9,6 +9,9 @@ const App = () => {
   const [searchField, setSearchField] = useState(""); // [value, setValue]
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilterdMonsters] = useState(monsters);
+  const [titleField, setTitleField] = useState("Oslinaya Jopa");
+
+  console.log("rendered");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -29,9 +32,22 @@ const App = () => {
     setSearchField(searchFieldString);
   };
 
+  const onTitleChange = (e) => {
+    const headerText = e.target.value;
+    setTitleField(headerText);
+  };
+
   return (
     <div className="App">
-      <h1 className="app-title">Oslinaya Jopa</h1>
+      <h1 className="app-title">{titleField}</h1>
+
+      <SearchBox
+        onChangeHandler={onTitleChange}
+        placeholder="change header"
+        className="header-box"
+      />
+
+      <br />
 
       <SearchBox
         onChangeHandler={onSearchChange}
